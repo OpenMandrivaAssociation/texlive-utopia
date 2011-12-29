@@ -17,8 +17,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
 
 %description
 The Adobe Standard Encoding set (upright and italic shapes,
@@ -27,20 +25,12 @@ donated to the X Consortium. Macro support, and maths fonts
 that match the Utopia family, are provided by the Fourier and
 the Mathdesign Utopia font packages.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -105,7 +95,6 @@ the Mathdesign Utopia font packages.
 %{_texmfdistdir}/fonts/vf/adobe/utopia/putro8t.vf
 %doc %{_texmfdistdir}/doc/fonts/utopia/LICENSE-utopia.txt
 %doc %{_texmfdistdir}/doc/fonts/utopia/README-utopia.txt
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -116,5 +105,3 @@ the Mathdesign Utopia font packages.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
