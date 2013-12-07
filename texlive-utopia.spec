@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-utopia
 Version:	20071004
-Release:	5
+Release:	6
 Summary:	Adobe Utopia fonts
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/utopia
