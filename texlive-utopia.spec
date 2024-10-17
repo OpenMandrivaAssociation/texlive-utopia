@@ -3,7 +3,7 @@ Version:	15878
 Release:	2
 Summary:	Adobe Utopia fonts
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/fonts/utopia
+URL:		https://www.ctan.org/tex-archive/fonts/utopia
 License:	OTHER-FREE
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/utopia.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/utopia.doc.r%{version}.tar.xz
